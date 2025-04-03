@@ -49,6 +49,8 @@ services:
     privileged: true  # ← важный ключ
     restart: always
     pid: host           # ← нужен для доступа к процессам хоста
+    networks:
+      - network-zabbix
     security_opt:
       - apparmor=unconfined
     volumes:
