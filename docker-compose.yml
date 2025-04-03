@@ -56,6 +56,8 @@ services:
       - /sys:/sys:ro
       - /var/log:/var/log:ro
       - /var/run/docker.sock:/var/run/docker.sock
+    secrets:
+      - zabbix-agent2-psk
     environment:
       ZBX_SERVER_HOST: 127.0.0.1     # или IP/hostname сервера Zabbix
       ZBX_SERVER_PORT: 64343
@@ -78,7 +80,6 @@ services:
     restart: always
     secrets:
       - zabbix-passwd
-      - zabbix-agent2-psk
     environment:
       ZBX_SERVER_HOST: zabbix-server
       ZBX_SERVER_PORT: 10051
