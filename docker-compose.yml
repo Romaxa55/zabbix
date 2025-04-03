@@ -68,6 +68,7 @@ services:
       ZBX_TLSACCEPT: psk
       ZBX_TLSPSKIDENTITY: agent2-psk
       ZBX_TLSPSKFILE: /run/secrets/zabbix-agent2-psk
+      ZBX_ENABLE_CONFIGURATION_CACHE_STATS: "false"
 
   zabbix-frontend:
     container_name: zabbix-frontend
