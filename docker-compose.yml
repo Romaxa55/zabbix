@@ -73,3 +73,6 @@ services:
 secrets:
   zabbix-passwd:
     file: ./zabbix-passwd.txt
+
+volumes:
+  zabbix_ph_data:
