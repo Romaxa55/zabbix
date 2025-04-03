@@ -40,6 +40,10 @@ services:
       POSTGRES_DB: zabbix
       POSTGRES_USER: zabbix
       POSTGRES_PASSWORD_FILE: /run/secrets/zabbix-passwd
+      TLSCONNECT: psk
+      TLSACCEPT: psk
+      TLSPSKIDENTITY: agent2-psk
+      TLSPSKFILE: /run/secrets/zabbix-agent2-psk
     depends_on:
       - postgres
 
@@ -94,6 +98,8 @@ services:
 secrets:
   zabbix-passwd:
     file: ./zabbix-passwd.txt
+  zabbix-agent2-psk:
+    file: ./zabbix_agent2.psk
 
 volumes:
   zabbix_ph_data:
