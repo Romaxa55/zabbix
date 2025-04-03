@@ -65,12 +65,13 @@ services:
       PHP_TZ: Asia/Ho_Chi_Minh
     depends_on:
       - postgres
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.zabbix-frontend.rule=Host(`zabbix.rubystay.vn`)"
-      - "traefik.http.routers.zabbix-frontend.entrypoints=websecure"
-      - "traefik.http.services.zabbix-frontend.loadbalancer.server.port=8080"
-      - "traefik.http.routers.zabbix-frontend.tls.certresolver=myresolver"
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.zabbix-frontend.rule=Host(`zabbix.rubystay.vn`)"
+        - "traefik.http.routers.zabbix-frontend.entrypoints=websecure"
+        - "traefik.http.services.zabbix-frontend.loadbalancer.server.port=8080"
+        - "traefik.http.routers.zabbix-frontend.tls.certresolver=myresolver"
 secrets:
   zabbix-passwd:
     file: ./zabbix-passwd.txt
