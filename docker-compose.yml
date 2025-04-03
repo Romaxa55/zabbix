@@ -62,10 +62,10 @@ services:
       ZBX_HOSTNAME: agent-on-host
       ZBX_ACTIVE_ALLOW: "true"
       ZBX_PASSIVE_ALLOW: "false"
-      TLSCONNECT: psk
-      TLSACCEPT: psk
-      TLSPSKIDENTITY: agent2-psk
-      TLSPSKFILE: /run/secrets/zabbix-agent2-psk
+      ZBX_TLSCONNECT: psk
+      ZBX_TLSACCEPT: psk
+      ZBX_TLSPSKIDENTITY: agent2-psk
+      ZBX_TLSPSKFILE: /run/secrets/zabbix-agent2-psk
 
   zabbix-frontend:
     container_name: zabbix-frontend
