@@ -48,6 +48,7 @@ services:
     image: zabbix/zabbix-agent2:alpine-7.2.5
     privileged: true  # ← важный ключ
     restart: always
+    network_mode: host
     pid: host           # ← нужен для доступа к процессам хоста
     networks:
       - network-zabbix
