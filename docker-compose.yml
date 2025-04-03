@@ -53,12 +53,8 @@ services:
     security_opt:
       - apparmor=unconfined
     volumes:
-      - /:/rootfs:ro                 # доступ ко всей файловой системе
-      - /var/run:/var/run:ro
       - /sys:/sys:ro
-      - /proc:/proc:ro
-      - /etc:/etc:ro
-      - /var/log:/var/log:ro         # доступ к логам
+      - /var/log:/var/log:ro
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       ZBX_SERVER_HOST: 127.0.0.1     # или IP/hostname сервера Zabbix
